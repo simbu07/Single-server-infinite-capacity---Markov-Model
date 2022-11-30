@@ -19,10 +19,49 @@ This is a queuing model in which the arrival is Marcovian and departure distribu
 
 
 ## Experiment:
+![f2](https://user-images.githubusercontent.com/94525786/204873505-09bea976-254c-4ea2-b1d2-2e6cad30f21b.png)
 
 
-## Program
+## Program:
+```python
+Name: Silambarsan K
+Reg No: 212221230101
+
+arr_time=float(input("Enter the mean inter arrival time of objects from Feeder (in secs): "))
+ser_time=float(input("Enter the mean  inter service time of Lathe Machine (in secs) :  "))
+Robot_time=float(input("Enter the Additional time taken for the Robot (in secs) :  "))
+lam=1/arr_time
+mu=1/(ser_time+Robot_time)
+print("--------------------------------------------------------------")
+print("Single Server with Infinite Capacity - (M/M/1):(oo/FIFO)")
+print("--------------------------------------------------------------")
+print("The mean arrival rate per second : %0.2f "%lam)
+print("The mean service rate per second : %0.2f "%mu)
+if (lam <  mu):
+    Ls=lam/(mu-lam)
+    Lq=Ls-lam/mu
+    Ws=Ls/lam
+    Wq=Lq/lam
+    print("Average number of objects in the system : %0.2f "%Ls)
+    print("Average number of objects in the conveyor :  %0.2f "%Lq)
+    print("Average waiting time of an object in the system : %0.2f secs"%Ws)
+    print("Average waiting time of an object in the conveyor : %0.2f secs"%Wq)
+    print("Probability that the system is busy : %0.2f "%(lam/mu) )
+    print("Probability that the system is empty : %0.2f "%(1-lam/mu) )
+else:
+    print("Warning! Objects Over flow will happen in the conveyor")
+print("---------------------------------------------------------------")
 
 
-## Output  and result
+```
 
+## Output:
+![o2](https://user-images.githubusercontent.com/94525786/204873194-4a570923-08a2-4363-aa20-47359b28cd47.png)
+
+## Result
+Thus all these 
+(a) average number of materials in the system 
+(b) average number of materials in the conveyor
+(c) waiting time of each material in the system 
+(d) waiting time of each material in the conveyor
+are found sucessfully
